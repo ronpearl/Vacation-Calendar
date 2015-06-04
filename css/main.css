@@ -25,6 +25,12 @@ a, a:visited, a:active, a:focus {
     color: #FEFEFE;
 }
 
+@media (max-width: 768px)
+{
+	.navbar-brand {
+    	font-size: 15px;
+	}
+}
 
 
 
@@ -142,4 +148,8 @@ a, a:visited, a:active, a:focus {
 .userTable td {
     border-bottom: 1px solid #dedede;
     padding: 13px 8px;
+}
+
+.oncallSelect {
+    margin: 7px 0 0;
 }
