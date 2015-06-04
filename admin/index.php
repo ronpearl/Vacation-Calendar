@@ -35,7 +35,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <title>Vacation Calendar - ADMIN</title>
+        <title>Vacation Calendar - ADMIN - GCU Web Design</title>
         
         <!-- Bootstrap -->
         <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -94,11 +94,13 @@
                         echo $e->getMessage();
                     }
                     
-                    echo '
+					
+					echo '
                         <table class="userTable">
                             <tbody>
                                 <tr>
                                     <th>ID</th>
+									<th>Admin?</th>
                                     <th>Name</th>
                                     <th>Email</th>
 									<th></th>
@@ -113,18 +115,22 @@
                         $lName = $userInfo['last'];
                         $email = $userInfo['email'];
 						$userColor = $userInfo['color'];
-                        
+						$adminStat = $userInfo['admin'];
+                        	$isAdmin = ($adminStat == '1' ? "Yes" : "No");
+							
                         echo '
                             <tr>
                                 <td>'.$uid.'</td>
+								<td>'.$isAdmin.'</td>
                                 <td>'.$fName.' '.$lName.'</td>
                                 <td>'.$email.'</td>
                                 <td></td>
-                                <td><i class="fa fa-pencil-square-o" data-toggle="modal" data-target="#userModal" data-tooltip="tooltip" title="Edit" data-usernumber="'.$uid.'" data-firstname="'.$fName.'" data-lastname="'.$lName.'" data-emailaddy="'.$email.'" data-color="'.$userColor.'" style="color: #ff0000; cursor: pointer;"></i></td>
+                                <td><i class="fa fa-pencil-square-o" data-toggle="modal" data-target="#userModal" data-tooltip="tooltip" title="Edit" data-usernumber="'.$uid.'" data-firstname="'.$fName.'" data-lastname="'.$lName.'" data-emailaddy="'.$email.'" data-color="'.$userColor.'" data-adminstatus="'.$adminStat.'" style="color: #ff0000; cursor: pointer;"></i></td>
                             </tr>
                         ';
                     }
-                    
+					
+					
                     echo '
                             </tbody>
                         </table>
@@ -165,6 +171,13 @@
                         <label for="color" class="control-label">Color</label>
                         <input type="text" class="form-control" name="color" id="userColorpicker" required>
                     </div>
+                    <div class="form-group">
+                    	<label for="adminStat">Admin</label>
+                        <select class="form-control" name="adminStat" id="adminStatSelect">
+                        	<option value="0">No</option>
+                            <option value="1">Yes</option>
+                        </select>                       
+                    </div>
                   <input type="hidden" name="userID" id="hiddenUserID" value="">
                   <input type="submit" class="btn btn-primary" name="submit" value="Update">
                 </form>
@@ -184,6 +197,7 @@
 			  var userName = button.data('firstname') + " " + button.data('lastname');
 			  var userID = button.data('usernumber');
 			  var userEmail = button.data('emailaddy');
+			  var adminStat = button.data('adminstatus');
 				  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
 				  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
 			  var modal = $(this)
@@ -194,6 +208,7 @@
 			  modal.find('input[id="hiddenUserID"]').val(userID);
 			  modal.find('#emailOnForm').val(userEmail);
 			  modal.find('#userColorpicker').val("#"+button.data('color'));
+			  modal.find('#adminStatSelect>option:eq('+adminStat+')').prop('selected', true);
 			})
 		</script>
         
@@ -222,6 +237,13 @@
                     <div class="form-group">
                         <label for="color" class="control-label">Color</label>
                         <input type="text" class="form-control" name="color" id="userColorpicker2" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="adminStat" class="control-label">Admin</label>
+                        <select class="form-control" name="adminStat" id="adminStatus">
+                        	<option value="0">No</option>
+                            <option value="1">Yes</option>
+                        </select>
                     </div>
                   <input type="hidden" name="userID" id="hiddenUserID" value="">
                   <input type="submit" class="btn btn-primary" name="submit" value="Update">

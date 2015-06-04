@@ -11,7 +11,7 @@
 	
 	require('../settings.php');
 	
-	$firstName = $lastName = $email = $color = $userID = "";
+	$firstName = $lastName = $email = $color = $userID = $adminStat = "";
 	
 	foreach ($_POST as $key => $val)
 	{
@@ -25,12 +25,13 @@
 	
 	$db = new baseConnection;
 	$conn = $db->getConn();
-	$query = $conn->prepare("UPDATE vacations_users SET first = :first, last = :last, email = :email, color = :color WHERE uid = '$userID'");
+	$query = $conn->prepare("UPDATE vacations_users SET first = :first, last = :last, email = :email, color = :color, admin = :admin WHERE uid = '$userID'");
 	$query->execute(array(
 		':first' => $firstName,
 		':last' => $lastName,
 		':email' => $email,
-		':color' => $color
+		':color' => $color,
+		':admin' => $adminStat
 	));
 		
 		

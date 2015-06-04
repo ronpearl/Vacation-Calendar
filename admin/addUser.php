@@ -11,7 +11,7 @@
 	
 	require('../settings.php');
 	
-	$firstName = $lastName = $email = $color = $userID = "";
+	$firstName = $lastName = $email = $color = $userID = $adminStat = "";
 	
 	foreach ($_POST as $key => $val)
 	{
@@ -36,18 +36,19 @@
 		
 					
 		$conn2 = $db->getConn();
-		$query2 = $conn2->prepare("INSERT INTO vacations_users (uid, first, last, email, pass, color, admin) VALUES (:uid, :first, :last, :email, '19e59582214bc05df30d0263125a3498', :color, '0')");
+		$query2 = $conn2->prepare("INSERT INTO vacations_users (uid, first, last, email, pass, color, admin) VALUES (:uid, :first, :last, :email, '19e59582214bc05df30d0263125a3498', :color, :admin)");
 		$query2->execute(array(
 			':uid' => $nextUID,
 			':first' => $firstName,
 			':last' => $lastName,
 			':email' => $email,
-			':color' => $color
+			':color' => $color,
+			':admin' => $adminStat
 		));
 	} catch(PDOException $e) {
 		echo $e->getMessage();
 	}
 		
 		
-	header('Location: '.$siteRoot.'wdvacations/admin');
+	header('Location: '.$siteRoot.'/admin');
 ?>
