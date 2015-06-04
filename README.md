@@ -3,7 +3,7 @@ Calendar Program For Small Work Environment
 
 Notes:
 -
-1. This project is currently in the process of being designed and you may encounter some flaws. 
+1. This is my first EVER GIT publication!!!   This project is currently in the process of being designed and you may/will encounter some flaws. 
 2. It was designed to function on a small scale.
 3. The database files were manually added, so you wil need to import them into your server.
 4. Currently there is no admin section for adding users.  They will need to be added via the DB table "vacations_users".
