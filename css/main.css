@@ -28,7 +28,7 @@ a, a:visited, a:active, a:focus {
 @media (max-width: 768px)
 {
 	.navbar-brand {
-    	font-size: 15px;
+    	font-size: 16px;
 	}
 }
 
