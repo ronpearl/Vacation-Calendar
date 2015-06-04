@@ -1,0 +1,145 @@
+body {
+	margin-top: 51px;
+	background-color: #eeeeee;
+}
+
+a {
+    color: #4787e0;
+}
+a, a:visited, a:active, a:focus {
+	outline: none;
+}
+
+.navbar-inverse {
+    background-color: #393939;
+    border-color: transparent;
+}
+
+.navbar-brand {
+    font-size: 20px;
+	letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #FEFEFE;
+}
+
+
+
+
+.row.no-gutter {
+	margin: 0;
+}
+
+/* NOT allowing vertical divs in calendar.  Will only float left */
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+    float: left;
+}
+
+.col-md-1 {
+    padding: 0;
+    width: 14.2857%;
+}
+
+
+
+.modal-body {
+	text-align: left;
+}
+.modal-header .fa.fa-trash {
+    color: #ff0000;
+    font-size: 26px;
+    right: 20px;
+    position: absolute;
+}
+
+
+.tooltip.top .tooltip-arrow {
+    border-top-color: #8A40C8;
+    border-width: 5px 5px 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -5px;
+}
+.tooltip-inner {
+    background: #8A40C8 none repeat scroll 0 0;
+    border: 1px solid transparent;
+    color: #fff;
+}
+
+
+/* LOGIN MENU */
+.dropdown-menu input {
+	padding: 3px 10px;
+	margin-bottom: 15px;
+}
+
+.working {
+	background-color: rgba(0, 0, 0, 0.45);
+	display: none;
+	height: 100%;
+	margin: 0;
+	padding: 20% 0 0;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	z-index: 1040;
+}
+.fa-spinner {
+	color: #fff;
+	font-size: 50px;
+	margin: 0 auto;
+	text-align: center;
+	width: 70px;
+}
+
+.forgotPWLink {
+    font-size: 11px;
+    position: relative;
+    top: -8px;
+}
+
+
+/* COLORPICKER */
+.colorpicker-2x .colorpicker-saturation {
+	width: 200px;
+	height: 200px;
+}
+.colorpicker-2x .colorpicker-hue,
+.colorpicker-2x .colorpicker-alpha {
+	width: 30px;
+	height: 200px;
+}
+.colorpicker-2x .colorpicker-color,
+.colorpicker-2x .colorpicker-color div{
+	height: 30px;
+}
+
+
+
+/* PW RESET */
+.pwResetBox {
+    background-color: #fff;
+    box-shadow: 0 0 14px #dadada;
+    margin: 60px 0 0;
+    padding: 20px;
+}
+
+
+
+/* ADMIN */
+.userTable {
+	width: 100%;
+}
+.userTable th {
+    background-color: #fbfbfb;
+    padding: 8px;
+}
+.userTable tr:hover td {
+    background-color: #e8e8e8;
+}
+.userTable td {
+    border-bottom: 1px solid #dedede;
+    padding: 13px 8px;
+}

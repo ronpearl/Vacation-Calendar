@@ -1,0 +1,131 @@
+
+.hidden {
+	opacity: 0;
+	position: absolute;
+}
+.visible {
+	opacity: 1;
+}
+
+
+input.calendar,
+select.calendar {
+	width: 99px;
+    float: left;
+    margin-right: 8px;
+}
+
+button.calendar {
+	background: url('images/calendar/calBTN.png');
+	border: 0;
+	cursor: pointer;
+	float: left;
+	height: 20px;
+	margin:1px 6px 0 0;
+	width: 20px;
+}
+button.calendar:hover,
+button.calendar.active {
+	background-position: 0 20px;
+}
+
+.calendar {
+    text-align: center;
+	margin-top: 15px;
+}
+
+.monheader {
+    background-color: #ffffff;
+    font-family: Helvetica Neue;
+    font-size: 22px;
+    height: auto;
+    overflow: hidden;
+    padding: 16px 0;
+    position: relative;
+}
+
+.dayheader {
+	background-color: #763ABA;
+	color: #fff;
+	font-size: 1.2em;
+}
+
+.day, .today, .weekend, .holiday {
+	height: 140px;
+}
+
+.day {
+    background-color: #fff;
+    border: 1px solid #d5d5d5;
+}
+.today {
+    background-color: #f8f7e5;
+    border: 1px solid #c3b0d6;
+}
+.weekend {
+	background-color: #EAEAEA;
+	border: 1px solid #D5D5D5;
+}
+.holiday {
+	background-color: #faf2ff;
+	border: 1px solid #D5D5D5;
+}
+
+.shownHoliday {
+    color: #b495cf;
+    position: absolute;
+    top: 106px;
+    width: 100%;
+    z-index: 0;
+}
+
+.daynumberBox {
+    display: block;
+    padding: 5px 4px;
+    text-align: left;
+}
+.dayNum {
+    background-color: #d49be8;
+    border-radius: 16px;
+    box-shadow: 1px 1px 2px #7e3dae;
+    color: #fff;
+    height: 22px;
+    text-align: center;
+    width: 22px;
+}
+
+.vacPerson {
+	color: #5D506C;
+	display: block;
+	position: relative;
+}
+
+.vacPerson .fa.fa-star, 
+.vacPerson .fa.fa-star-o {
+	position: absolute;
+	left: 4px;
+	top: 4px;
+	color: #FFF;
+	font-size: 12px;
+}
+
+.vacPerson .fa.fa-pencil-square-o {
+	position: absolute;
+	right: 4px;
+	top: 3px;
+	color: #979B63;
+	cursor: pointer;
+}
+
+.oncall-box {
+    border-right: 20px solid #aeaeae;
+    border-top: 20px solid #fff;
+    bottom: 0;
+    height: 0;
+    position: absolute;
+    right: 0;
+    width: 0;
+}
+.oncall-box:hover {
+	border-right: 20px solid #777;
+}
