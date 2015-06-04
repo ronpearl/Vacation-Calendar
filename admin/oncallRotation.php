@@ -3,6 +3,8 @@
 	
 	$userID = $isAdmin = "";
 	
+	date_default_timezone_set('America/Phoenix');
+	
 	if (!isset($_SESSION["login_user"]) || !isset($_SESSION["login_id"]))
 	{
 		// Set view mode based upon log-in status

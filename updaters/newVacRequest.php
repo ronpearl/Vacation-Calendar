@@ -25,6 +25,8 @@ function test_function(){
 	{
 		$return["action"] = 'fail';
 	} else {
+		date_default_timezone_set('America/Phoenix');
+		
 		// Check the date differences
 		// Must be at least 7 days out or with the next 90 days
 		$todayDateTime = new DateTime($return["requestDate"]);
@@ -59,7 +61,7 @@ function test_function(){
 		}
 		
 		
-		if ($return['overrideTimeframes'] === 'true' || ($daysDifference >= 7 && $daysDifference <= 90 && $startDateTime <= $endDateTime && $startDateTime > $todayDateTime))
+		if ($return['overrideTimeframes'] === 'true' || ($daysDifference >= $minTimeframeLimitation && $daysDifference <= $maxTimeframeLimitation && $startDateTime <= $endDateTime && $startDateTime > $todayDateTime))
 		{
 			include('../includes/baseConnection.php');
 			require('../includes/PHPMailer/PHPMailerAutoload.php');
