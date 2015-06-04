@@ -18,6 +18,8 @@
 	require('../settings.php');
 	include_once('../includes/baseConnection.php');
 	
+	$db = new baseConnection();
+	
 	// Check to see if admin is viewing page.
 	// Otherwise send them back home
 	if (!$isAdmin)
@@ -33,7 +35,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <title>Vacation Calendar - ADMIN</title>
+        <title>Vacation Calendar - ADMIN - GCU Web Design</title>
         
         <!-- Bootstrap -->
         <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -43,6 +45,8 @@
         <link href="../css/bootstrap-colorpicker.css" rel="stylesheet">
         
         <link type="text/css" rel="stylesheet" href="../css/bootstrap-datetimepicker.css">
+        
+		<link rel="stylesheet" href="../css/bootstrap-multiselect.css" type="text/css"/>
         
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -58,10 +62,49 @@
         
         <section>
         	<div class="container">
-            	<div class="col-md-12">
+            	<div class="col-md-8">
 	            	<h2>Admin - On Call Rotation</h2>
                     <br>
               	</div>
+                <div class="col-md-4">
+                	<?php
+						if ($onCallService)
+						{
+							// Allow for users that are on call to be reset
+							echo '
+								<div class="oncallSelect">
+									<form method="post" action="resetOncallUsers.php">
+										<div class="form-group">
+											<label for="oncallSelectDropdown">Reset On Call People</label>
+											<br>
+											<select name="oncallSelectDropdown[]" id="multi-dropdown" multiple="multiple" class="form-control">
+							';
+							
+							try {
+								$conn4 = $db->getConn();
+								$query4 = $conn4->prepare("SELECT * FROM vacations_users ORDER BY first ASC");
+								$query4->execute();
+								$allUsers = $query4->fetchAll();
+							} catch(PDOException $e) {
+								echo $e->getMessage();
+							}
+							
+							foreach ($allUsers as $userInfo)
+							{
+								echo '<option value="'.$userInfo['uid'].'">'.$userInfo['first'].' '.$userInfo['last'].'</option>';
+							}
+							unset($userInfo);
+							
+							echo '
+											</select>
+											<input type="submit" class="btn btn-primary" name="submit" value="Reset" style="display: inline-block;">
+										</div>
+									</form>
+								</div>
+							';
+						}
+					?>
+                </div>
             </div>
         </section>
         
@@ -89,7 +132,6 @@
 						';
 					
 						try {
-							$db = new baseConnection();
 							$conn = $db->getConn();
 							$query = $conn->prepare("SELECT * FROM vacations_oncall ORDER BY week_number ASC");
 							$query->execute();
@@ -134,8 +176,6 @@
 							</table>
 							<br><br>
 						';
-						
-						$db = null;
 					} else {
 						echo "<div class='alert alert-danger' role='alert'>Please update the settings.php file to turn the On Call services on.</div>";
 					}
@@ -226,5 +266,24 @@
 		</script>
         
         
+        
+		<script type="text/javascript" src="../js/bootstrap-multiselect.js"></script>
+        <!-- Initialize the multi-select plugin -->
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#multi-dropdown').multiselect({
+					disableIfEmpty: true,
+					maxHeight: 200,
+					nonSelectedText: 'This will RESET your current list',
+					includeSelectAllOption: true,
+					selectAllValue: 'select-all'
+				});
+			});
+        </script>
+        
+        
+        <?php
+			$db = null;
+		?>
    	</body>
 </html>
