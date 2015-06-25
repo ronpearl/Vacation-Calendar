@@ -33,4 +33,12 @@
 		
 		return $resultName;
 	}
+	
+	
+	/*
+	*	Return bool, checking if the date is on a weekend
+	*/
+	function dateIsWeekend($date) {
+		return (date('N', strtotime($date)) >= 6);
+	}
 ?>

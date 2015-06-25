@@ -16,6 +16,7 @@
 					</a>
 					<ul class="dropdown-menu" role="menu">
 						<li><a href="admin/">Users</a></li>
+						<li><a href="admin/daysOut.php">Days Out</a></li>
 						<li><a href="admin/oncallRotation.php">On Call</a></li>
 					</ul>
 				</li>

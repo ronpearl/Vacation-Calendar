@@ -9,10 +9,7 @@
 
 	class setupDB extends baseConnection
 	{
-		// Info for oncall peoples.  Allows us to add user data to the oncall table for every week of the year.
-		protected $arrayOfPeopleIDs = array(2, 9, 10, 11);
 		protected $weeksInAYear = 52;
-		
 		protected $dbConnection;
 		
 		public function __construct()

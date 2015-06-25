@@ -102,11 +102,11 @@ function test_function(){
 				//$mail->addBCC('bcc@example.com');
 				
 				$mail->isHTML(true);   
-				$mail->Subject = "Vacation Request - GCU Web Design Vacations";
+				$mail->Subject = "Vacation Request";
 				
 				$mail->Body    = 'Vacation request has been submitted for '.$return['startDate'].'
 				<br><br>
-				<a href="'.$siteRoot.'wdvacations">Visit Website</a>';
+				<a href="'.$siteRoot.'">Visit Website</a>';
 				
 				$mail->send();
 			}

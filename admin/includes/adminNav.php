@@ -7,7 +7,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="<?php echo $siteRoot.'wdvacations'; ?>">Web Design Vacation Calendar</a>
+                    <a class="navbar-brand" href="<?php echo $siteRoot; ?>">Web Design Calendar</a>
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
@@ -18,6 +18,7 @@
                             </a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="index.php">Users</a></li>
+                                <li><a href="daysOut.php">Days Out</a></li>
                                 <li><a href="oncallRotation.php">On Call</a></li>
                             </ul>
                         </li>

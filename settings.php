@@ -3,13 +3,13 @@
 	*	Holds generic settings that can be used across the entire site.
 	*/
 	
-	$siteRoot = 'http://marketing.dev.gcu.edu/wdvacations';
+	$siteRoot = 'http://yourdomain.com';
 	
 	// Admin Email - Used for vacation submissions
-	$adminEmail = 'robert.gay@gcu.edu';
+	$adminEmail = 'your@email.com';
 	
 	// noreply email names
-	$noReplyEmail = 'noreply@gcu.edu';
+	$noReplyEmail = 'noreply@domain.com';
 	
 	// Vacation Timeframe Limitations
 	// This will be the min-max days out that someone would be able to submit for vacation
@@ -26,7 +26,7 @@
 		"Good Friday" 				=> "2015-04-03",
 		"Memorial Day" 				=> "2015-05-25",
 		"Independence Day" 			=> "2015-07-03",
-		"Labor Day" 					=> "2015-09-07",
+		"Labor Day" 				=> "2015-09-07",
 		"Thanksgiving Day" 			=> "2015-11-26",
 		"Day After Thanksgiving" 	=> "2015-11-27",
 		"Christmas Eve" 			=> "2015-12-24",
