@@ -36,4 +36,12 @@ CREATE TABLE `vacations_users` (
   PRIMARY KEY (`uid`),
   KEY `email` (`email`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `vacations_users`
+--
+
+INSERT INTO `vacations_users` (`uid`, `first`, `last`, `email`, `pass`, `pwVerify`, `color`, `admin`) VALUES
+(1, 'Test', 'Person', 'test@test.com', 'bc23d614b0c9b2f4396f5ca094053c9d', '', '', 1);
+
 /*!40101 SET character_set_client = @saved_cs_client */;
