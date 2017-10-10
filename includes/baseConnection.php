@@ -14,7 +14,7 @@
 		
 		public function __construct() /*server, username, password, dbName*/
 		{
-			$this->serverName = 'server';
+			$this->serverName = 'localhost';
 			$this->serverUsername = 'user';
 			$this->serverPW = 'pass';
 			$this->dbName = 'db';
