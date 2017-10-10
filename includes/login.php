@@ -28,7 +28,7 @@ function test_function(){
 	  
 	  	// Hash the password
 		$hashedPassword = md5("$98gDkc38!ndS*".$return["pass"]);
-		
+
 		try {
 			$db = new baseConnection();
 			$conn = $db->getConn();
@@ -61,7 +61,7 @@ function test_function(){
 			$return["action"] = 'fail';
 		}
 	}
-	
+
 	$return["json"] = json_encode($return);
 	echo json_encode($return);
 	}

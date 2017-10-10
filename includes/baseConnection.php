@@ -15,9 +15,9 @@
 		public function __construct() /*server, username, password, dbName*/
 		{
 			$this->serverName = 'localhost';
-			$this->serverUsername = 'user';
-			$this->serverPW = 'pass';
-			$this->dbName = 'db';
+			$this->serverUsername = 'root';
+			$this->serverPW = '';
+			$this->dbName = 'vacations';
 			
 			$this->doConnect();
 		}

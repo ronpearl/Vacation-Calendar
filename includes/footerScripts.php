@@ -74,7 +74,8 @@ $("document").ready(function(){
 				// Check the results and do things from here
 				if (data["action"] == "fail")
 				{
-					$("#error").html("<div class='alert alert-danger' role='alert'>Invalid email and/or password</div>");
+					$("#error").html("<div class='alert alert-danger' role='alert'>Invalid email " +
+                        "and/or password</div>");
 				} else {
 					$("#error").html("<div class='alert alert-success' role='alert'>Being re-directed...</div>");
 					window.location.href = "index.php";
