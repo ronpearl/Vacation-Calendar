@@ -15,11 +15,13 @@ Notes:
 -
 1. This is my first EVER GIT publication!!!   This project is currently in the process of being designed and you may/will encounter some flaws. 
 2. It was designed to function on a small scale.
-3. The database files were manually added, so you wil need to import them into your server.
+3. The database files were manually added, so you will need to import them into your server.
 
 Setup:
 -
 By default the program is set to use a database called "vacations".  The MySql export files are included in the download package. Once this is setup, you can edit the "includes/baseConnection.php" file with your servers connection information.
+
+An initial admin user is setup by default. In order to login for the first time you can use email address 'test@test.com' with a password of 'Password1'. This will allow you to login as an admin and create your new account. 
 
 The program settings are currently located in the "settings.php" file.  Here you can setup the email information for emails that are sent due to new vacation requests, select holiday days to show, and the ability to enable/disable weekly on call schedules.
 
